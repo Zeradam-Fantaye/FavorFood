@@ -1,0 +1,9 @@
+Difference between authentication and authorization:
+
+    => Authentication is finding out if someone is who they say they are
+    
+    => Authorization is once you figure out who someone is, you figure out if they are allowed to do something
+    => Think of authorization as permission. 
+            => What is that user allowed to do?
+            => What is their security clearance?
+                    => You can't view the edit form unless you own the campground

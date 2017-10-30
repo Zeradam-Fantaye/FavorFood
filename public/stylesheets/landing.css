@@ -1,0 +1,105 @@
+
+/*Set the body to black, so that it starts fading in from there*/
+body{
+    background-color: #000;
+}
+
+/*Positioning the welcome text and "View all campground" button*/
+#landing-header {
+  z-index: 1;         /* Will make it move forward to the screen */
+  position: relative; /* static is the default and it won't let the z-index to take effect */
+  text-align: center;
+  padding-top: 40vh;  /* vh: view height */
+}
+
+#landing-header h1 {
+  color: #fff;        /* Set the text color to white */
+}
+
+/*This is done for the <ul>*/
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;       /* This is to make sure that the background images are behind the text and the button   */
+  list-style: none; /* This will remove the bullet points  */
+  margin: 0;
+  padding: 0;
+}
+
+/*This will style the individual <li>*/
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%; /* This will center the pages perfectly  */
+  background-repeat: no-repeat;
+  opacity: 0;                   /* This is because we want our images to start fadded out  */
+  z-index: 0;                   /* So, the slideshows are beind the text and the button  */
+  animation: imageAnimation 50s linear infinite; 
+                  
+                  /*=> It allows us to fade the images in and out*/
+                  /*=> Here, the name of the animation is "imageAnimation". */
+                  /*=> It will last 50s*/
+                  /*=> Linear means to have the animation with the same speed from beginning to the end*/
+                  /*=> "infinite" telling it to loop infinitely*/
+                  
+}
+
+
+.slideshow li:nth-child(1) { 
+  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+}
+
+.slideshow li:nth-child(2) { 
+  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  animation-delay: 10s; 
+}
+
+.slideshow li:nth-child(3) { 
+  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  animation-delay: 20s; 
+}
+
+.slideshow li:nth-child(4) { 
+  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  animation-delay: 30s; 
+}
+
+.slideshow li:nth-child(5) { 
+  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  animation-delay: 40s; 
+}
+
+/*Creating the keyframes for the animation. Now they can slide*/
+@keyframes imageAnimation { 
+    
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;  /* The ease-in and ease-out will give us a smooth transition */
+  }
+  
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  
+  20% {
+    opacity: 1
+  }
+  
+  30% {
+    opacity: 0
+  }
+  
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
