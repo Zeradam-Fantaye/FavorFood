@@ -3,7 +3,7 @@
 
 
 var mongoose = require("mongoose");
-var Campground = require("./models/campground");
+var Food = require("./models/food");
 var Comment = require("./models/comment");
 
 
@@ -30,20 +30,20 @@ var data = [
 
 function seedDB(){
     
-   Campground.remove({}, function(err){
+   Food.remove({}, function(err){
        
            if (!err){}
            
 //         if(!err){
             
-//             console.log("Removed Campgrounds");
+//             console.log("Removed Foods");
             
-//             //add a few campgrounds and add a few comments
+//             //add a few foods and add a few comments
 //             for (var i = 0; i < data.length; i++){
-//                 Campground.create(data[i], function(err, newCampground){
+//                 Food.create(data[i], function(err, newFood){
 //                     if(!err){
                         
-//                         console.log("Campground created!");
+//                         console.log("Food created!");
                         
 //                         //create a comment
 //                         Comment.create({
@@ -52,8 +52,8 @@ function seedDB(){
 //                         }, function(err, newComment){
                             
 //                             if(!err){
-//                                 newCampground.comments.push(newComment);
-//                                 newCampground.save(); 
+//                                 newFood.comments.push(newComment);
+//                                 newFood.save(); 
 //                                 console.log("Created new comment");
 //                             }else{
 //                                 console.log(err);

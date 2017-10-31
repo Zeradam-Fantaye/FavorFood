@@ -28,8 +28,8 @@ router.post("/register", function(req, res){
       
         if(!err){
             passport.authenticate("local")(req, res, function(){
-                req.flash("success", "Welcome to YelpCamp: " + newlyUser.username);
-                res.redirect("/campgrounds");
+                req.flash("success", "Welcome to FavorFood: " + newlyUser.username);
+                res.redirect("/foods");
             });
         }else{
             req.flash("error", err.message);
@@ -49,7 +49,7 @@ router.get("/login", function(req, res){
 
 //Login logic
 router.post("/login",passport.authenticate("local", {
-    successRedirect: "/campgrounds",
+    successRedirect: "/foods",
     failureRedirect: "/login"
 }) , function(req, res){});
 
@@ -61,7 +61,7 @@ router.get("/logout", function(req, res){
     req.logout(); //Obviously, this comes from the packages we've installed
     
     req.flash("success", "You are successfully logged out!");
-    res.redirect("/campgrounds");
+    res.redirect("/foods");
 });
 
 

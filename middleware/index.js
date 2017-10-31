@@ -1,17 +1,17 @@
 var Comment = require("../models/comment.js");
-var Campground = require("../models/campground.js");
+var Food = require("../models/food.js");
 var flash    = require("connect-flash");
 
 var middlewareObj = {};
 
-middlewareObj.checkCampgroundOwnership = function (req, res, next){
+middlewareObj.checkFoodOwnership = function (req, res, next){
     if(req.isAuthenticated()){
-        Campground.findById(req.params.id, function(err, foundCampground){
+        Food.findById(req.params.id, function(err, foundFood){
             if(!err){
-                //Okay, now does this user own this campground(foundCampground)?
-                if(foundCampground.author.id.equals(req.user._id)){
+                //Okay, now does this user own this food(foundFood)?
+                if(foundFood.author.id.equals(req.user._id)){
                     
-                    //Now this user owns this campground
+                    //Now this user owns this food
                     next();
                     
                 }else{
@@ -20,7 +20,7 @@ middlewareObj.checkCampgroundOwnership = function (req, res, next){
                 }
             }else{
                 req.flash("error", "ERROR: comment not found");
-                res.redirect("/campgrounds");
+                res.redirect("/foods");
             }
         });
     }else {
@@ -36,7 +36,7 @@ middlewareObj.checkCommentOwnership = function (req, res, next){
                 //Okay, now does this user own this comment(foundComment)?
                 if(foundComment.author.id.equals(req.user._id)){
                     
-                    //Now this user owns this campground
+                    //Now this user owns this food
                     next();
                     
                 }else{
@@ -45,7 +45,7 @@ middlewareObj.checkCommentOwnership = function (req, res, next){
                 }
             }else{
                 req.flash("error", "ERROR: comment not found");
-                res.redirect("/campgrounds");
+                res.redirect("/foods");
             }
         });
     }else {

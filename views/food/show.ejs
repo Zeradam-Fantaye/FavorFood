@@ -1,0 +1,97 @@
+<% include ../partials/header %>
+
+    <div class="container">
+        <div class="row">
+            
+            <!--This is the stuff in the left pane-->
+            <!--<div class="col-md-3">-->
+            <!--    <p class="lead">YelpCamp</p>-->
+                
+            <!--    <div class="list-group">-->
+            <!--        <li class="list-group-item active">Info 1</li>-->
+            <!--        <li class="list-group-item">Info 2</li>-->
+            <!--        <li class="list-group-item">Info 3</li>-->
+            <!--    </div>-->
+            <!--</div>-->
+            
+            <div class="col-md-12 adjustImage">
+                
+                <!--This is the food section-->
+                <div class="thumbnail">
+                    <img class="img-resonsive adjustImage2" src="<%= food.image  %>" >  
+               
+                    <div class="caption-full">
+                        
+                        <h4 class="pull-right">$<%= food.price  %>/night</h4>
+                        
+                        <h4><a> <%= food.name %></a> </h4>
+                        
+                        <p> <%= food.description %> </p>
+                        
+                        <p>
+                            <em>Submitted by <%= food.author.username %></em>
+                        </p>
+                        
+                        <% if(currentUser && food.author.id.equals(currentUser._id)){ %>
+                               
+                                <!--Edit button -->
+                                <a class="btn btn-xs btn-warning" href="/foods/<%= food._id  %>/edit">Edit</a>
+                            
+                                <!--Delete button-->
+                                <form class="align_to_right"  action="/foods/<%=food._id%>?_method=DELETE" method="POST">
+                                    <button class="btn btn-xs btn-danger">Delete</button>
+                                </form>                  
+                         
+                        <% } %>
+                        
+                    </div>
+                    
+                </div>
+                
+                <!--This is the comment section-->
+                <div class="well">
+                    <div  class="text-right">
+                        <a class="btn btn-success" href="/foods/<%= food._id  %>/comments/new">Add comment</a>
+                    </div>
+                    
+                    <hr>
+                    
+                    <% for (var i = 0; i < food.comments.length; i++){ %>
+
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+                                
+                                <strong> <%= food.comments[i].author.username  %> </strong>
+                                <span class="pull-right">10 days ago</span>
+                                <p>
+                                    <%= food.comments[i].text  %>
+                                </p>
+              
+                                <% if(currentUser && food.comments[i].author.id.equals(currentUser._id)){ %>
+                                   
+                                    <!--Comment's edit button-->
+                                    <a class="btn btn-xs btn-warning" href="/foods/<%= food._id %>/comments/<%= food.comments[i]._id %>/edit">Edit</a>
+                                    
+                                    <!--Comment's delete button-->
+                                    <form class="align_to_right" action="/foods/<%=food._id%>/comments/<%= food.comments[i]._id %>?_method=DELETE" method="POST">
+                                        <button class="btn btn-xs btn-danger">Delete</button>
+                                    </form>
+                                   
+                                <% } %>
+                                
+                            </div>
+                            
+                        </div>
+                             
+                    <% } %>
+                    
+                </div> <!-- End of well -->
+                
+            </div> <!-- End of col-md-9 -->
+            
+        </div>
+        
+    </div>
+
+<% include ../partials/footer %>

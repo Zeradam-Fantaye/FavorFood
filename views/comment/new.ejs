@@ -3,10 +3,10 @@
 
     <div class="container">
                 
-            <h1 style="text-align: center;">Adding comments to <%= campground.name  %></h1>
+            <h1 style="text-align: center;">Adding comments to <%= food.name  %></h1>
             
             <div class="row" style="width: 30%; margin: 25px auto;">
-                <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+                <form action="/foods/<%= food._id %>/comments" method="POST">
         
                     <div class="form-group">
                         <input class="form-control" type="text" name="comment[text]" placeholder="text">
@@ -18,7 +18,7 @@
                     
                 </form>
                 
-                <a href="/campgrounds">Go back!!</a> 
+                <a href="/foods">Go back!!</a> 
                 
             </div>
         

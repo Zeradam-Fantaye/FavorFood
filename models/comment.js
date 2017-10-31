@@ -1,6 +1,6 @@
 var mongoose    = require("mongoose");
 
-//-- Creating a schema: A plan on what our campground looks like  --
+//-- Creating a schema: A plan on what our food looks like  --
 var commentSchema = new mongoose.Schema({
     text: String,
     author: 
@@ -14,7 +14,7 @@ var commentSchema = new mongoose.Schema({
         }
 });
 
-//-- We compiled the campgroundSchema into a model and saved it  --
+//-- We compiled the foodSchema into a model and saved it  --
 var Comment = mongoose.model("Comment", commentSchema);
 
 module.exports = Comment;

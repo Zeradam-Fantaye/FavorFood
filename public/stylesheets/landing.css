@@ -4,7 +4,7 @@ body{
     background-color: #000;
 }
 
-/*Positioning the welcome text and "View all campground" button*/
+/*Positioning the welcome text and "View all food" button*/
 #landing-header {
   z-index: 1;         /* Will make it move forward to the screen */
   position: relative; /* static is the default and it won't let the z-index to take effect */
@@ -51,28 +51,27 @@ body{
                   
 }
 
-
 .slideshow li:nth-child(1) { 
-  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+  background-image: url(https://miami.eat24hours.com/files/cuisines/v4/italian.jpg) 
 }
 
 .slideshow li:nth-child(2) { 
-  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  background-image: url(https://www.jamieoliver.com/italian/uploaded/2017/may/11.Pizza-Norma-2--1--desktop.jpg);
   animation-delay: 10s; 
 }
 
 .slideshow li:nth-child(3) { 
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  background-image: url(https://news.vanderbilt.edu/files/Indian_spices.jpg);
   animation-delay: 20s; 
 }
 
 .slideshow li:nth-child(4) { 
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  background-image: url(https://img1.10bestmedia.com/Images/Photos/340687/10best-chinese-kirin_54_990x660.jpg);
   animation-delay: 30s; 
 }
 
 .slideshow li:nth-child(5) { 
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  background-image: url(https://img.grouponcdn.com/deal/gLxzVvFEoCedi44saKxH/HY-2048x1228/v1/c700x420.jpg);
   animation-delay: 40s; 
 }
 

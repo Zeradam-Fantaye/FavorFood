@@ -2,7 +2,7 @@ var express         = require("express"),     //importing express
     app             = express(),
     bodyParser      = require("body-parser"), //importing body-parser
     mongoose        = require("mongoose"),    //importing mongoose
-    Campground      = require("./models/campground.js"),
+    Food            = require("./models/food.js"),
     methodOverride  = require("method-override"),
     Comment         = require("./models/comment.js"),
     seedDB          = require("./seeds.js"),
@@ -12,7 +12,7 @@ var express         = require("express"),     //importing express
     flash           = require("connect-flash");
     
 var commentRoutes       = require("./routes/comment"),
-    campgroundRoutes    = require("./routes/campground"),
+    foodRoutes          = require("./routes/food"),
     indexRoutes         = require("./routes/index");
   
 //Seed the database    
@@ -34,7 +34,7 @@ var commentRoutes       = require("./routes/comment"),
 
 */
 
-var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+var url = process.env.DATABASEURL || "mongodb://localhost/foodDB";
 mongoose.connect(url);
 
 //telling express to use bodyparser
@@ -78,11 +78,11 @@ app.use(function(req, res, next){
 
 
 app.use(indexRoutes);
-app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/foods", foodRoutes);
+app.use("/foods/:id/comments", commentRoutes);
 
 
 //------------- LISTENING ROUTE -------------
 app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("YelpCamp server has started!!");
+    console.log("FoodFavor server has started!!");
 });
