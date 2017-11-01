@@ -37,6 +37,10 @@ var commentRoutes       = require("./routes/comment"),
 var url = process.env.DATABASEURL || "mongodb://localhost/foodDB";
 mongoose.connect(url);
 
+//mongoose.connect("mongodb://foodbook:612180Zz@@ds235775.mlab.com:35775/mydb");
+//mongoose.connect("mongodb://zeru:zeru@ds235775.mlab.com:35775/mydb");
+
+
 //telling express to use bodyparser
 app.use(bodyParser.urlencoded({extended: true}));
 
