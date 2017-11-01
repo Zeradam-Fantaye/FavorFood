@@ -1,6 +1,6 @@
 # foodbook
 
-This is a full-stack app that enables users to create a food of their choice add all necessary information about it. 
+This is a full-stack app that enables users to create a food of their choice and add all necessary information about it. 
 
 ## Technologies used in this app:
 -  **At the client side** : HTML5, CSS/CSS3, Bootstrap, Vanilla JS
