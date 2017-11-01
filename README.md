@@ -4,7 +4,7 @@ This is a full-stack app that enables users to create a food of their choice and
 
 ## Technologies used in this app:
 -  **At the client side** : HTML5, CSS/CSS3, Bootstrap, Vanilla JS
--  **At the server side** : NodeJS,  Express, MongoDB(to manage database), mongoose, npm
+-  **At the server side** : NodeJS,  Express, MongoDB(_to manage database_), mongoose, npm
 
 ## Info:
  - This website is been deployed using Heroku [here](https://grisly-broomstick-71631.herokuapp.com/)
